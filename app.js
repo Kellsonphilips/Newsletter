@@ -3,9 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const { Redirect } = require("request/lib/redirect");
-// const request = require("request");
-// const https = require("https");
-// const { url } = require("inspector");
 
 
 const app = express();
@@ -26,6 +23,8 @@ app.get("/", function(req, res) {
 // Sending subscriber infomation to our external API
 app.post("/", function(req, res) {
 
+    // Grabbing the subscriber details with bodyParser 
+    
     console.log(req.body.fName, req.body.lName, req.body.email);
 
     const listId = "f88674a389";
